@@ -1,3 +1,4 @@
-x = '5'
+a = 56
+b = a.reverse
 
-print(x.isnumeric())
+print(b)
