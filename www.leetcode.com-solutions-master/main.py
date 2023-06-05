@@ -1,47 +1,15 @@
-from collections import deque
-
-
-def clear_expression(the_expression):
-    for sym in the_expression:
-        if sym.isspace():
-            the_expression = the_expression.replace(" ", "")
-    return the_expression
-
-
-def multiply(x, z):
-    return x * z
-
-
-def division(param, param1):
-    return param / param1
-
-
-expression = input('Please enter an expression\n')
-clear_expression(expression)
-
-result = 0
-digits = deque()
-symbols = deque()
-
-for char in expression:
-    if char.isdigit():
-        digits.append(float(char))
-    else:
-        symbols.append(char)
-
-while symbols:
-    for symbol in symbols:
-        if symbol == "*":
-            res = multiply(digits[0], digits[1])
-            result += res
-            digits.popleft()
-            digits.popleft()
-        elif symbol == "/":
-            res = division(digits[0], digits[1])
-            result += res
-            symbols.popleft()
+def fizzbuzz(n):
+    answer = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            answer.append("FizzBuzz")
+        elif i % 3 == 0:
+            answer.append("Fizz")
+        elif i % 5 == 0:
+            answer.append("Buzz")
         else:
-            digits.append(digits.popleft())
-            symbols.append(symbols.popleft())
+            answer.append(str(i))
+    return answer
 
-print(result)
+
+print(fizzbuzz(5))
