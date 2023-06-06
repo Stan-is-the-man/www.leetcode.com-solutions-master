@@ -70,4 +70,3 @@
 #             digits.append(digits.popleft())
 #             symbols.append(symbols.popleft())
 
-
