@@ -70,3 +70,10 @@
 #             digits.append(digits.popleft())
 #             symbols.append(symbols.popleft())
 
+aaa = {
+    'a': 3,
+    "b": 3,
+    'c': 4
+}
+print(aaa.keys())
+print(aaa.values())
